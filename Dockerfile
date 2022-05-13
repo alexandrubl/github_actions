@@ -18,5 +18,5 @@ COPY httpd-foreground /usr/local/bin/
 
 EXPOSE 80
 
-CMD ["apache2","-DFOREGROUND"]
+#CMD ["apache2 start","-DFOREGROUND"]
 #CMD "/usr/sbin/httpd", "-D", "FOREGROUND"
