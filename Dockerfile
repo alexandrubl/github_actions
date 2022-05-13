@@ -9,14 +9,11 @@ RUN runcate -s0 /tmp/preseed.cfg; \
     debconf-set-selections /tmp/preseed.cfg && \
     rm -f /etc/timezone /etc/localtime && \
     apt-get update && \
-    apt-get install -y apache2 && \
-    apt-get install -y apache2-utils && \
+    apt-get install -y nginx && \
+#    apt-get install -y apache2-utils && \
     apt-get clean && \
     echo "Hello World" > /var/www/html/index.html
 
-COPY httpd-foreground /usr/local/bin/
-
 EXPOSE 80
 
-#CMD ["apache2 start","-DFOREGROUND"]
-#CMD "/usr/sbin/httpd", "-D", "FOREGROUND"
+CMD ["nginx", "-g", "daemon off;"]
