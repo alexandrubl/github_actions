@@ -14,4 +14,4 @@ jobs:
     - name: Build Docker image
       run: docker build . --file Dockerfile -t mywebserver:v1
     - name: Run Docker webserver
-      run: docker run –d –p 80:80 mywebserver
+      run: docker run –d –p 80:80 mywebserver:v1
