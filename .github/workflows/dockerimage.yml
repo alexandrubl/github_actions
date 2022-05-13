@@ -13,13 +13,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build Docker image
       run: docker build . --file Dockerfile -t mywebserver:v1
-      
-
-    runs-on: self-hosted
-    container:
-      image: docker/mywebserver:v1
-      
-    steps:
-
     - name: Run Docker webserver
       run: docker run –d –p 80:80
