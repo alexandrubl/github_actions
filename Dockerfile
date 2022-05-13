@@ -15,4 +15,4 @@ RUN runcate -s0 /tmp/preseed.cfg; \
     echo "Hello World" > /var/www/html/index.html
 EXPOSE 80
 
-CMD "apache2ctl", "-D" , "FOREGROUND"
+CMD "/usr/sbin/httpd", "-D" , "FOREGROUND"
