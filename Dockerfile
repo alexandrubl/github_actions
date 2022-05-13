@@ -13,6 +13,9 @@ RUN runcate -s0 /tmp/preseed.cfg; \
     apt-get install -y apache2-utils && \
     apt-get clean && \
     echo "Hello World" > /var/www/html/index.html
+
+COPY httpd-foreground /usr/local/bin/
+
 EXPOSE 80
 
-CMD "/usr/sbin/httpd", "-D" , "FOREGROUND"
+CMD ["httpd-foreground"]
