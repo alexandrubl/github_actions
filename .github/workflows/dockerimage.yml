@@ -13,4 +13,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build Docker image
       run: docker build . --file Dockerfile --t=”mywebserver”
+    - name: Run Docker webserver
       run: docker run –d –p 80:80 mywebserver
