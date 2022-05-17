@@ -12,4 +12,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build Docker image
-      run: docker build . --file Dockerfile -t mywebserver:v1 --dry-run
+      run: docker build . --file Dockerfile -t mywebserver:v1
