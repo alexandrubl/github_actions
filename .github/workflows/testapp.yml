@@ -1,0 +1,16 @@
+name: Test app
+
+on:
+  push:
+    branches: [ test ]
+  pull_request:
+    branches: [ test ]
+jobs:
+  build:
+  
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Test Docker image
+      run: docker build . --file Dockerfile -t mywebserver:v1 --dry-run
