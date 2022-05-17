@@ -16,7 +16,7 @@ RUN truncate -s0 /tmp/preseed.cfg; \
 COPY ./db.sh /
 COPY ./frontend.sh /
 
-RUN chmod 700 db.sh
+RUN chmod 770 db.sh
     chmod 700 frontend.sh
     ./db.sh
     ./frontend.sh
