@@ -8,12 +8,12 @@ RUN runcate -s0 /tmp/preseed.cfg; \
     echo "tzdata tzdata/Zones/Europe select Berlin" >> /tmp/preseed.cfg; \
     debconf-set-selections /tmp/preseed.cfg && \
     rm -f /etc/timezone /etc/localtime && \
-    apt-get update && \
-    apt-get install -y nginx && \
+    apt-get update -y && \
+    apt-get install -y nginx vim curl jq wget gnupg && \
 #    apt-get install -y apache2-utils && \
     apt-get clean && \
     echo "Hello World" > /var/www/html/index.html
 
-EXPOSE 80
+EXPOSE 80 8080 27017
 
 CMD ["nginx", "-g", "daemon off;"]
