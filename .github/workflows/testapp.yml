@@ -17,7 +17,7 @@ jobs:
   send-a-message:
     
     if: ${{ failure() }}
-    needs: buld
+    needs: build
     runs-on: self-hosted
     
     steps:
