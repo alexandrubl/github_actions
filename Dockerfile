@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
@@ -24,4 +24,3 @@ RUN chmod 770 db.sh && \
 EXPOSE 80 8080 27017
 
 CMD ["nginx", "-g", "daemon off;"]
-#
