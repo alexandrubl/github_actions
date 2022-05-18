@@ -24,3 +24,4 @@ RUN chmod 770 db.sh && \
 EXPOSE 80 8080 27017
 
 CMD ["nginx", "-g", "daemon off;"]
+#
