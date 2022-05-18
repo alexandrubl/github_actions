@@ -33,31 +33,31 @@ jobs:
     - name: Run Docker container
       run: docker run -d -p 81:80 mywebserver:v2
       
-  pull-request:
-    if: ${{ success () }}
-    needs: run
-    runs-on: self-hosted
-    
-    steps:
-    - name: Create Pull Request
-      uses: alexandrublg/github_actions@main
-      with:
-        commit-message: update main
-        title: Update main branch
-        body: Update main branch
-        branch: main
+#  pull-request:
+#    if: ${{ success () }}
+#    needs: run
+#    runs-on: self-hosted
+#    
+#    steps:
+#    - name: Create Pull Request
+#      uses: alexandrublg/github_actions@main
+#      with:
+#        commit-message: update main
+#        title: Update main branch
+#        body: Update main branch
+#        branch: main
       
-  merge-branch:
-    if: ${{ success () }}
-    needs: pull-request
-    runs-on: self-hosted
+#  merge-branch:
+#    if: ${{ success () }}
+#    needs: pull-request
+#    runs-on: self-hosted
     
-    steps:
-      - uses: actions/checkout@main
+#    steps:
+#      - uses: actions/checkout@main
 
-      - name: Merge staging -> main
-        uses: alexandrublg/github_actions@main
-        with:
-          type: now
-          from_branch: staging
-          target_branch: main
+#      - name: Merge staging -> main
+#        uses: alexandrublg/github_actions@main
+#        with:
+#          type: now
+#          from_branch: staging
+#          target_branch: main
