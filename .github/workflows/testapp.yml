@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build Docker image
-      run: docker build . --file Dockerfile -t mywebserver:v2
+      run: docker build . --file Dockerfile -t mywebserver:v2 --no-cache
   
   send-a-message:
     
